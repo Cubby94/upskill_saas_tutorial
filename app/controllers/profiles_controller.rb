@@ -18,6 +18,12 @@ class ProfilesController < ApplicationController
          render action: :new
       end
    end
+   # GET to /users/:user_id/profile/edit
+   def edit
+      # Render blank profile details form
+      @user = User.find( params[:user_id])
+      @profile = @user.profile
+   end
    
    private
       def profile_params
